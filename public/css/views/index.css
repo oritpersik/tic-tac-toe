@@ -9,67 +9,80 @@
 	border: solid 1px;
 }
 
-	.lvl-over {
-			/* applied to a drop target when a draggable object is over it */
-			border: 2px dashed black !important;
-		}
+.lvl-over {
+	/* applied to a drop target when a draggable object is over it */
+	border: 2px dashed black !important;
+}
 
-		.lvl-target {
-			/* applied to all drop targets when a drag operation begins, used to indicate drop targets on a page */
-			background-color: #ddd;
-			opacity: .5;
-		}
+.lvl-target {
+	/* applied to all drop targets when a drag operation begins, used to indicate drop targets on a page */
+	background-color: #ddd;
+	opacity: .5;
+}
 
-		[draggable] {
-			-moz-user-select: none;
-			-khtml-user-select: none;
-			-webkit-user-select: none;
-			user-select: none;
-			/* Required to make elements draggable in old WebKit */
-			-khtml-user-drag: element;
-			-webkit-user-drag: element;
-			cursor: move;
-			border:1px solid black;
-		}
+[draggable] {
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+	user-select: none;
+	/* Required to make elements draggable in old WebKit */
+	-khtml-user-drag: element;
+	-webkit-user-drag: element;
+	cursor: move;
+	border:1px solid black;
+}
 
-		.peg {
-			text-align: center;
-			font-weight: bold;
-			border:1px black solid;
-			width: 75px;
-			margin: 10px;
-		}
+.peg {
+	text-align: center;
+	font-weight: bold;
+	border:1px black solid;
+	width: 75px;
+	margin: 10px;
+}
 
-		.slot {
-			margin-right:2px;
-			margin-top:2px;
-			width:25;
-			height:25px;
-			display:inline-block;
-			border: none;
-		}
+.slot {
+	margin-right:2px;
+	margin-top:2px;
+	width:25;
+	height:25px;
+	display:inline-block;
+	border: none;
+}
 
-		.red {
-			background-color: red;
-		}
+.red {
+	background-color: red;
+}
+.red::after { content: "O";
+position: absolute;
+font-size: -webkit-xxx-large;
+line-height: 100px;
+margin-left: 30px;
+}
 
-		.blue {
-			background-color: blue;
-		}
+.blue {
+	background-color: blue;
+}
 
-		.green {
-			background-color: green;
-		}
+.green {
+	background-color: green;
+}
 
-		.black {
-			background-color: black;
-			color: white;
-		}
+.green::after { content: "X";
+position: absolute;
+font-size: -webkit-xxx-large;
+line-height: 100px;
+margin-left: 30px;
+}
 
-		.grey {
-			background-color: grey;
-		}
+.black {
+	background-color: black;
+	color: white;
+}
 
-		pre strong {
-			font-size:12pt;
-		}
+.grey {
+	background-color: grey;
+}
+
+pre strong {
+	font-size:12pt;
+}
