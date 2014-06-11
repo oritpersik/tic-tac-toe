@@ -101,3 +101,25 @@ exports.user = function(req, res, next, id) {
             next();
         });
 };
+
+
+
+exports.bufferTest = function(req, res) {
+    // var str = 'hhhh';
+    // var buf = new Buffer('ggggg');
+    // res.jsonp(buf);
+     var content = new Buffer("Hello 世界", "utf-8");
+    console.log('request arrived');
+    res.writeHead(200, {
+        // 'Content-Encoding':'utf-8',
+        // 'charset' : 'utf-8',
+        // 'Content-Length': content.length,
+        'Content-Type': 'text/plain;charset=utf-8'});
+    res.end(content);
+    // var content = "Hello 世界";
+    // var content = new Buffer("Hello 世界");
+
+    // res.charset = 'utf-8';
+    // res.contentType('text');
+    // res.send(content)
+};

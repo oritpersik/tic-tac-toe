@@ -1,0 +1,36 @@
+<div data-ng-controller="VodController" id="vodHomePage" data-ng-init="init()">
+	<ul class="categories">
+		<li ng-repeat="category in categories" ng-class="{active: category.categoryName == currentCategory}">
+			<button data-ng-show="!category.url" ng-click="setCurrentCategory(category.categoryName)">{{category.name}}</button>
+			<a data-ng-show="category.url" href="{{category.url}}">{{category.name}}</a>
+		</li>
+	</ul>
+	
+	<div carousel>
+		<div slide ng-repeat="descCurrent in currentCategory.photos" active="descCurrent.active">
+			<a href="{{descCurrent.url}}">
+				<img class="backgroundImg" ng-src="{{descCurrent.imageUrl}}">
+			</a>	        
+		</div>
+	</div>
+	<div class="carousel-caption">
+		<img src="img/vodwatchbutton.png">
+		<div class="message">
+			<p class='title'>{{currentCategory.photos[currentIndex].title}}</p>
+			<p class='rav'>{{currentCategory.photos[currentIndex].rav}}</p>
+			<p>{{currentCategory.photos[currentIndex].description}}</p>	
+		</div>	
+	</div>
+	<div class="imagesList">
+		<ul>
+			<li ng-repeat="descCurrent in currentCategory.photos">
+				<button class="btn btn-mini" ng-class="{'btn-info': !descCurrent.active, 'btn-success': descCurrent.active}" ng-disabled="descCurrent.active" ng-click="descCurrent.active = true; $parent.currentIndex = $index">
+					<img class="imageBottom" ng-src="{{descCurrent.imageUrl}}">
+				</button>
+			</li>
+		</ul>
+		<button ng-click="nextVod()" class="nav left" id="next"></button>
+		<button ng-click="prevVod()" class="nav right" id="prev"></button>
+	</div>
+</div>
+
