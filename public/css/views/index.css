@@ -1,3 +1,15 @@
+.wrapper-board {
+	position: relative;
+}
+
+.wrapper-board .drag-x {
+	left: 160px;
+}
+
+.wrapper-board .drag-o {
+	left: 710px;
+}
+
 .board {
 	width: 309px;
 	margin: 0 auto;
@@ -30,6 +42,13 @@
 	-webkit-user-drag: element;
 	cursor: move;
 	border:1px solid black;
+	position: absolute;
+	width: 70px;
+	height: 70px;
+	top: 115px;
+	line-height: 70px;
+	text-align: center;
+	font-size: x-large;
 }
 
 .peg {
@@ -49,10 +68,10 @@
 	border: none;
 }
 
-.red {
+.o {
 	background-color: red;
 }
-.red::after { content: "O";
+.o::after { content: "O";
 position: absolute;
 font-size: -webkit-xxx-large;
 line-height: 100px;
@@ -63,11 +82,11 @@ margin-left: 30px;
 	background-color: blue;
 }
 
-.green {
+.x {
 	background-color: green;
 }
 
-.green::after { content: "X";
+.x::after { content: "X";
 position: absolute;
 font-size: -webkit-xxx-large;
 line-height: 100px;

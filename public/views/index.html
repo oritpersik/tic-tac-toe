@@ -1,33 +1,16 @@
 <section data-ng-controller="IndexController">
-	<h1>Tic-tac-toe</h1>
-	<!-- <div data-ng-repeat="x in ['x','x','x','x','x']" x-lvl-draggable="true" data-color="green">{{x}}</div> -->
-	<div x-lvl-draggable="true" data-color="green">X</div>
-	<div x-lvl-draggable="true" data-color="red">O</div>
-	<div class="board">
-		<div class="line" data-ng-repeat="line in [1,2,3]">
-			<div x-lvl-drop-target="true" x-on-drop="dropped(dragEl, dropEl)" class="cube" data-ng-repeat="cube in [1,2,3]">
-			</div>		
-		</div>
-	</div>
-	<!-- <div data-ng-repeat="o in ['o','o','o','o','o']">{{o}}</div>
- -->
-	<div class="players">
-		<div class="player-1">
-			<a href="" data-ng-click="openSignUpModal(1)">
-				<span data-ng-hide="global.player1">??????????</span>
-				<span data-ng-show="global.player1">{{global.player1.firstName}}</span>
-			</a>
 
-		</div>
-		vs
-		<div class="player-2">
-			<a href="" data-ng-click="openSignUpModal(2)">
-				<span data-ng-hide="global.player2">??????????</span>
-				<span data-ng-show="global.player2">{{global.player2.firstName}}</span>
-			</a>
-		</div>
+	<div class="wrapper-board">
+		<div x-lvl-draggable="true" data-type="x" class="drag-x">X</div>
+		<div x-lvl-draggable="true" data-type="o" class="drag-o">O</div>
+		<div class="board">
+			<div class="line" data-ng-repeat="line in [1,2,3]">
+				<div x-lvl-drop-target="true" x-on-drop="dropped(dragEl, dropEl)" class="cube" data-ng-repeat="cube in [1,2,3]">
+				</div>		
+			</div>
+		</div>	
 	</div>
-
+	
 	<!-- <div class="row">
 		<div class="col-md-1 col-md-offset-1">
 			<p>Click and drag a color onto the grid to the right</p>

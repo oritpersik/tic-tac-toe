@@ -30,19 +30,19 @@ angular.module('mean.system').controller('IndexController', ['$scope', 'Global',
 					var drag = angular.element(dragEl);
 				
 					//clear the previously applied color, if it exists
-					var bgClass = drop.attr('data-color');
-					if (bgClass) {
-						drop.removeClass(bgClass);
+					var typeClass = drop.attr('data-type');
+					if (typeClass) {
+						drop.removeClass(typeClass);
 					}
 
 					//add the dragged color
-					bgClass = drag.attr("data-color");
-					drop.addClass(bgClass);
-					drop.attr('data-color', bgClass);
+					typeClass = drag.attr("data-type");
+					drop.addClass(typeClass);
+					drop.attr('data-type', typeClass);
 
 					//if element has been dragged from the grid, clear dragged color
 					if (drag.attr("x-lvl-drop-target")) {
-						drag.removeClass(bgClass);
+						drag.removeClass(typeClass);
 					}
 				}
 
