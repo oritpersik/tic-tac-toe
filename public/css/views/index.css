@@ -69,13 +69,16 @@
 }
 
 .o {
-	background-color: red;
+	/*background-color: red;*/
+	background-color: rgba(50, 77, 37, 0.95);
 }
 .o::after { content: "O";
 position: absolute;
 font-size: -webkit-xxx-large;
 line-height: 100px;
 margin-left: 30px;
+color: wheat;
+
 }
 
 .blue {
@@ -83,7 +86,9 @@ margin-left: 30px;
 }
 
 .x {
-	background-color: green;
+	/*background-color: green;*/
+	background-color: rgba(50, 77, 37, 0.95);
+
 }
 
 .x::after { content: "X";
@@ -91,6 +96,7 @@ position: absolute;
 font-size: -webkit-xxx-large;
 line-height: 100px;
 margin-left: 30px;
+color: wheat;
 }
 
 .black {
@@ -104,4 +110,71 @@ margin-left: 30px;
 
 pre strong {
 	font-size:12pt;
+}
+
+#overlay {
+	/*display:none;*/
+	position: absolute;
+	background-color: rgba(192, 212, 255, 0.44);
+	z-index: 10;
+	top: 41px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+}
+.spinner {
+	position: relative;
+	margin: 100px auto;
+	top: 35%;
+	/*left: 50%;*/
+	width: 100px;
+	height: 100px;
+	position: relative;
+	text-align: center;
+
+	-webkit-animation: rotate 2.0s infinite linear;
+	animation: rotate 2.0s infinite linear;
+}
+
+.dot1, .dot2 {
+	width: 60%;
+	height: 60%;
+	display: inline-block;
+	position: absolute;
+	top: 0;
+	background-color: #333;
+	border-radius: 100%;
+
+	-webkit-animation: bounce 2.0s infinite ease-in-out;
+	animation: bounce 2.0s infinite ease-in-out;
+}
+
+.dot2 {
+	top: auto;
+	bottom: 0px;
+	-webkit-animation-delay: -1.0s;
+	animation-delay: -1.0s;
+}
+
+@-webkit-keyframes rotate { 100% { -webkit-transform: rotate(360deg) }}
+@keyframes rotate { 100% { transform: rotate(360deg) }}
+
+@-webkit-keyframes bounce {
+	0%, 100% { -webkit-transform: scale(0.0) }
+	50% { -webkit-transform: scale(1.0) }
+}
+
+@keyframes bounce {
+	0%, 100% { transform: scale(0.0) }
+	50% { transform: scale(1.0) }
+}
+
+
+.img13 {
+	-webkit-animation: rotate3d 4s linear infinite;
+}
+
+@-webkit-keyframes rotate3d {
+	from {-webkit-transform: rotateY(0deg);}
+	to   {-webkit-transform: rotateY(360deg);}
 }

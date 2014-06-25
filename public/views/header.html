@@ -14,10 +14,11 @@
         <li><a href="signin">Signin</a>
         </li>
     </ul> -->
+
     <ul class="nav pull-right players">
-        <li><a href="" data-ng-click="openSignUpModal(1)"><span data-ng-hide="global.player1">???</span><span data-ng-show="global.player1">{{global.player1}}</span></a></li>
+        <li><a href="" data-ng-click="openSignUpModal(1)"><span data-ng-hide="global.player1">???</span><span data-ng-show="global.player1">{{global.player1.firstName}}</span></a></li>
         <li class="divider-vertical">VS</li>
-        <li><a href="" data-ng-click="openSignUpModal(2)"><span data-ng-hide="global.player2">???</span><span data-ng-show="global.player2">{{global.player2}}</span></a></li>
+        <li><a href="" data-ng-click="openSignUpModal(2)"><span data-ng-hide="global.player2">???</span><span data-ng-show="global.player2">{{global.player2.firstName}}</span></a></li>
     </ul>
     <ul class="nav pull-right" data-ng-show="global.authenticated">
         <li class="dropdown">
