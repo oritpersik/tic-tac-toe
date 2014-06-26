@@ -1,4 +1,4 @@
-angular.module('mean.system').controller('HeaderController', ['$scope', 'Global','$modal', function ($scope, Global, $modal) {
+angular.module('mean.system').controller('HeaderController', ['$scope', 'Global','$modal','localStorageService', function ($scope, Global, $modal,localStorageService) {
     $scope.global = Global;
 
     $scope.menu = [{
@@ -23,7 +23,6 @@ angular.module('mean.system').controller('HeaderController', ['$scope', 'Global'
 		});
 
 		modalInstance.result.then(function (playerObj) {
-			// localStorageService.set('test', 'test');
 			if (player == 1)
 				$scope.global.player1 = playerObj;
 			else
@@ -31,5 +30,11 @@ angular.module('mean.system').controller('HeaderController', ['$scope', 'Global'
 		}, function () {
 		//$log.info('Modal dismissed at: ' + new Date());
 	});
+	};
+
+	$scope.initPlayers = function() {
+		$scope.global.player1 = localStorageService.get('player1');
+		$scope.global.player2 = localStorageService.get('player2');
+
 	};
 }]);

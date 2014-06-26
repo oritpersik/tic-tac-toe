@@ -17,7 +17,6 @@ angular.module('mean.system').controller('IndexController', ['$scope', 'Global',
 		});
 
 		modalInstance.result.then(function (playerObj) {
-			localStorageService.set('test', 'test');
 			if (player == 1)
 				$scope.global.player1 = playerObj;
 			else
@@ -28,67 +27,42 @@ angular.module('mean.system').controller('IndexController', ['$scope', 'Global',
 	};
 
 	$scope.dropped = function(dragEl, dropEl, x, y) {
-					//this is application logic, for the demo we just want to color the grid squares
-					//the directive provides a native dom object, wrap with jqlite
-					var drop = angular.element(dropEl);
-					var drag = angular.element(dragEl);
+		//this is application logic, for the demo we just want to color the grid squares
+		//the directive provides a native dom object, wrap with jqlite
+		var drop = angular.element(dropEl);
+		var drag = angular.element(dragEl);
 
-					//clear the previously applied color, if it exists
-					var typeClass = drop.attr('data-type');
-					if (typeClass) {
-						drop.removeClass(typeClass);
-					}
-
-					//add the dragged color
-					typeClass = drag.attr("data-type");
-					mat[x][y]= typeClass;
-					
-					drop.addClass(typeClass);
-					drop.attr('data-type', typeClass);
-
-					//if element has been dragged from the grid, clear dragged color
-					if (drag.attr("x-lvl-drop-target")) {
-						drag.removeClass(typeClass);
-					}
-					console.log(mat);
-				}
-
-				$scope.move = function(id)
-				{
-					swapBeginEndClass(id);
-	//document.getElementById(id).className = "end";
-}
-
-// swaps classes "begin" and "end" in the node with the specified HTML id.
-// adds class "end" if none are found
-function swapBeginEndClass(id)
-{
-	var nod = document.getElementById(id);
-	if (nod != null)
-	{
-		var new_class = "";
-		var found = false;
-		for (var i=0; i<nod.classList.length; i++)
-		{
-			var clas = nod.classList[i];
-			if (clas == "end")
-			{
-				clas = "begin";
-				found = true;
-			}
-			else if (clas == "begin")
-			{
-				clas = "end";
-				found = true;
-			}
-			new_class += " " + clas;
+		//clear the previously applied color, if it exists
+		var typeClass = drop.attr('data-type');
+		if (typeClass) {
+			drop.removeClass(typeClass);
 		}
-		if (!found)
-			new_class += " " + "end";
-		nod.setAttribute("class", new_class);
-	}
-}
 
+		//add the dragged color
+		typeClass = drag.attr("data-type");
+		mat[x][y]= typeClass;
+		
+		drop.addClass(typeClass);
+		drop.attr('data-type', typeClass);
 
+		//if element has been dragged from the grid, clear dragged color
+		if (drag.attr("x-lvl-drop-target")) {
+			drag.removeClass(typeClass);
+		}
+		console.log(mat);
+	};
+
+	  var canvas = document.getElementById('note-canvas');
+      var context = canvas.getContext('2d');
+
+      var imageObj = new Image();
+      imageObj.onload = function() {
+        var pattern = context.createPattern(imageObj, 'repeat');
+
+        context.rect(0, 0, canvas.width, canvas.height);
+        context.fillStyle = pattern;
+        context.fill();
+      };
+      imageObj.src = 'img/background.png';
 
 }]);

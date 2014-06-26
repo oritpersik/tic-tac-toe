@@ -1,57 +1,30 @@
-<!-- <section>
-	<div class="header"></div>
-	<div class="details">
-		<div>
-			<span>First Name:</span>
-			<input type="text" data-ng-model="currentPlayer.firstName"/>
-		</div>
-		<div>
-			<span>Last Name:</span>
-			<input type="text" data-ng-model="currentPlayer.lastName"/>
-		</div>
-		<div>
-			<span>Email:</span>
-			<input type="text"/>
-		</div>
-		<div>
-			<span>Phone:</span>
-			<input type="text"/>
-		</div>
-	</div>
-	<button data-ng-click="save(currentPlayer)">Save</button>
-</section> -->
+<form class="form-horizontal" data-ng-init="loadUser()">
+  <header>Player Details</header>
+  <div class="control-group">
+    <label class="control-label">First Name:</label>
+    <div class="controls">
+      <input type="text" placeholder="First name" data-ng-model="currentPlayer.firstName">
+    </div>
+  </div>
+  <div class="control-group">
+    <label class="control-label">Last Name:</label>
+    <div class="controls">
+      <input type="text" placeholder="Last name" data-ng-model="currentPlayer.lastName">
+    </div>
+  </div>
+  <div class="control-group">
+    <label class="control-label">Email:</label>
+    <div class="controls">
+      <input type="email" placeholder="Email" data-ng-model="currentPlayer.email">
+    </div>
+  </div>
+  <div class="control-group">
+    <label class="control-label">Phone:</label>
+    <div class="controls">
+      <input type="text" placeholder="Phone" data-ng-model="currentPlayer.phone">
+    </div>
+  </div>
+  <button data-ng-click="save(currentPlayer)" class="submit btn">Save</button>
+  <button data-ng-if="currentPlayer" class="btn btn-info" data-ng-click="clear()">Clear</button>
 
-<form class="form-horizontal" data-ng-submit="save(currentPlayer)">
-  <div class="control-group">
-    <label class="control-label" for="inputEmail">First Name:</label>
-    <div class="controls">
-      <input type="text" id="inputEmail" placeholder="Email" data-ng-model="currentPlayer.firstName">
-    </div>
-  </div>
-  <div class="control-group">
-    <label class="control-label" for="inputPassword">Last Name:</label>
-    <div class="controls">
-      <input type="text" id="inputPassword" placeholder="Password" data-ng-model="currentPlayer.lastName">
-    </div>
-  </div>
-   <div class="control-group">
-    <label class="control-label" for="inputPassword">Email:</label>
-    <div class="controls">
-      <input type="text" id="inputPassword" placeholder="Password" data-ng-model="currentPlayer.email">
-    </div>
-  </div>
-   <div class="control-group">
-    <label class="control-label" for="inputPassword">Phone:</label>
-    <div class="controls">
-      <input type="text" id="inputPassword" placeholder="Password" data-ng-model="currentPlayer.phone">
-    </div>
-  </div>
-  <div class="control-group">
-    <div class="controls">
-      <label class="checkbox">
-        <input type="checkbox"> Remember me
-      </label>
-      <button type="submit" class="btn">Sign up</button>
-    </div>
-  </div>
 </form>
