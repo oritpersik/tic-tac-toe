@@ -65,4 +65,8 @@ angular.module('mean.system').controller('IndexController', ['$scope', 'Global',
       };
       imageObj.src = 'img/background.png';
 
+      $scope.victory = function() {
+      	
+      };
+
 }]);

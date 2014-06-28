@@ -137,10 +137,10 @@ pre strong {
 .spinner {
 	position: relative;
 	margin: 100px auto;
-	top: 35%;
+	top: 10%;
 	/*left: 50%;*/
-	width: 100px;
-	height: 100px;
+	width: 300px;
+	height: 300px;
 	position: relative;
 	text-align: center;
 
@@ -154,8 +154,10 @@ pre strong {
 	display: inline-block;
 	position: absolute;
 	top: 0;
-	background-color: #333;
+	/*background-color: #333;*/
+	background-image: url(../../img/lotsofire.gif);
 	border-radius: 100%;
+	background-size: contain;
 
 	-webkit-animation: bounce 2.0s infinite ease-in-out;
 	animation: bounce 2.0s infinite ease-in-out;
