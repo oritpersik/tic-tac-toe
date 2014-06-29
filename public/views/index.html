@@ -1,9 +1,10 @@
 <section data-ng-controller="IndexController">
-
+	<h1> Now it's {{global['player' + currentTurn].firstName}} turn.</h1>
 	<div class="wrapper-board">
 		<div x-lvl-draggable="true" data-type="x" class="drag-x">X</div>
 		<div x-lvl-draggable="true" data-type="o" class="drag-o">O</div>
 		<canvas id="note-canvas" width="2000" height="1000"></canvas>
+
 		<div class="board" data-ng-class="{img13: !global.player1 || !global.player2}">
 			<div class="line" data-ng-repeat="line in [1,2,3]">
 				<div x-lvl-drop-target="true" x-on-drop="dropped(dragEl, dropEl, $parent.$index, $index)" class="cube" data-ng-repeat="cube in [1,2,3]">
@@ -15,14 +16,11 @@
 		<source src="songs/xo.mp3" type="audio/mpeg">
 			Your browser does not support the audio element.
 		</audio>
-		<button data-ng-click="victory()">WINNER</button>
 		<!--Loader-->
-		<div id="overlay">
+		<div id="overlay" data-ng-show="winner" data-ng-click="newGame()">
 			<div class="spinner">
 				<div class="dot1"></div>
 				<div class="dot2"></div>
 			</div>
 		</div>
 	</section>
-
-	<!-- <div class="board" data-ng-class="{img13: !global.player1 || !global.player2}"> -->
