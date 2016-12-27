@@ -1,3 +1,3 @@
 # Tic-Tac-Toe
-
-It's not an interesting project, please don't clone it. ;:)
+hello
+It's not an interesting project, please don't clone it. :)
